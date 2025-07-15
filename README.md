@@ -1,5 +1,10 @@
 # OpenFinance-Col
 
+[![CI](https://github.com/juanchobanano/openfinance-colombia/actions/workflows/ci.yml/badge.svg)](https://github.com/juanchobanano/openfinance-colombia/actions/workflows/ci.yml)
+[![AGPL License](https://img.shields.io/badge/license-AGPL--3.0-blue.svg)](./LICENSE)
+[![Join our Discord](https://img.shields.io/discord/1234567890?label=Discord&logo=discord&color=7289DA)](https://discord.gg/e8hgBYSq)
+
+
 > **Plataforma open-source para el ecosistema Open Finance en Colombia**
 >
 > Comienza hoy con extractos bancarios y scraping de datos financieros. Mañana, seremos interoperables con APIs oficiales.
