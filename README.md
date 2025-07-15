@@ -27,7 +27,7 @@ Queremos democratizar el acceso a los datos financieros, con una arquitectura mo
 * Interfaz web (Next.js 15) con resumen de transacciones y tasas.
 * Arquitectura dockerizada lista para desarrollo local.
 
-📌 [Ver nuestro Roadmap público](https://github.com/Juanchobanano/openfinance-colombia/projects/1)
+📌 [Ver nuestro Roadmap público](https://github.com/users/Juanchobanano/projects/1)
 
 
 ## 👩‍💻 Cómo empezar
