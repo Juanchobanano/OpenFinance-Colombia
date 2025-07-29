@@ -34,7 +34,7 @@ class Transaction(BaseModel):
         ...,
         description="Signed amount; debits are negative")
     currency: str = Field("COP", min_length=3, max_length=3)
-    txn_type: Literal["debit", "credit"] = Field(..., alias="type")
+    txn_type: Literal["debit", "credit"] = Field(..., )
     category: Optional[str] = Field(
         None, description="Normalized category label")
     balance_after: Optional[Decimal] = Field(
