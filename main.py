@@ -1,6 +1,7 @@
 from openfinance.parsers.nu_bank import parse_nubank_pdf
 import logging
 import openfinance.files.utils as ut
+import openfinance.constants as ct
 
 logging.basicConfig(
     level=logging.INFO,
@@ -18,8 +19,8 @@ if __name__ == "__main__":
 
     try:
         parse_nubank_pdf(
-            input_path="./data/Nu_2025-07-12.pdf",
-            password=""
+            input_path="./data/Nu_2025-05-12.pdf",
+            password=ct.NU_BANK_PASSWORD
         )
     except Exception as e:
         logging.error(f"Error: {e}")

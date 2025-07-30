@@ -1,5 +1,3 @@
-import openfinance.parsers.common.utils as ut
-from openfinance.parsers.common.textract import textract_pdf
 import logging
 
 logger = logging.getLogger(__name__)

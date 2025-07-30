@@ -9,6 +9,8 @@ REGION_NAME = "us-east-1"
 TEXTRACT_BUCKET_NAME = "openfinance-colombia-textract-bucket"
 TEMP_FOLDER = "tmp"
 MAX_PDF_CHUNK_SIZE = 1
+OUTPUT_FOLDER = "output"
+NU_BANK_PASSWORD = config.get("NU_BANK_PASSWORD")
 
 # Define AWS credentials as a dictionary
 aws_credentials = {
@@ -27,3 +29,9 @@ s3_client = boto3.client(
     's3',
     **aws_credentials
 )
+
+month_map = {
+    'ENE': 'JAN', 'FEB': 'FEB', 'MAR': 'MAR', 'ABR': 'APR', 'MAY': 'MAY',
+    'JUN': 'JUN', 'JUL': 'JUL', 'AGO': 'AUG', 'SEP': 'SEP',
+    'OCT': 'OCT', 'NOV': 'NOV', 'DIC': 'DEC'
+}

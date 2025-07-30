@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 import uuid
-from datetime import date, datetime
+from datetime import date, datetime, timezone
 from decimal import Decimal
 from typing import Literal, Optional
 
@@ -26,7 +26,7 @@ class Transaction(BaseModel):
     txn_date: date = Field(
         ...,
         description="Bank-posted date (local to institution)")
-    posted_at: datetime = Field(default_factory=datetime.utcnow,
+    posted_at: datetime = Field(default_factory=datetime.now(timezone.utc),
                                 description="Ingestion timestamp (UTC)")
 
     # money & classification
@@ -37,9 +37,6 @@ class Transaction(BaseModel):
     txn_type: Literal["debit", "credit"] = Field(..., )
     category: Optional[str] = Field(
         None, description="Normalized category label")
-    balance_after: Optional[Decimal] = Field(
-        None, description="Running balance after this txn, if provided by bank"
-    )
 
     # descriptive info
     description: str = Field(..., description="Raw merchant or memo line")
@@ -47,14 +44,6 @@ class Transaction(BaseModel):
         default_factory=dict,
         description="Free-form key/value pairs—e.g. merchant_id, geo, tags",
     )
-
-    @model_validator(mode="after")
-    def ensure_sign_matches_type(self) -> "Transaction":
-        if (self.txn_type == "debit" and self.amount > 0) or (
-            self.txn_type == "credit" and self.amount < 0
-        ):
-            raise ValueError("amount sign does not match txn_type")
-        return self
 
     model_config = {"json_schema_extra": {"examples": [
         {

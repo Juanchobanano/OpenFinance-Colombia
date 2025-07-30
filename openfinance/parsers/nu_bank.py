@@ -5,6 +5,8 @@ import logging
 import openfinance.constants as ct
 import os
 import pandas as pd
+from openfinance.parsers.preprocess.nu_bank import (
+    preprocess_nu_bank, concatenate_csv_to_df)
 
 logger = logging.getLogger(__name__)
 
@@ -65,3 +67,14 @@ def parse_nubank_pdf(
         output_path=ct.TEMP_FOLDER
     )
     logger.info(f"CSV paths: {csv_paths}")
+
+    # Preprocess CSV files
+    logger.info("Preprocessing CSV files ...")
+    df = concatenate_csv_to_df(csv_files=csv_paths)
+    df = preprocess_nu_bank(df)
+    df.to_csv(
+        f"{ct.OUTPUT_FOLDER}/{os.path.basename(input_path)}.csv", index=False)
+    output_csv_path = f"{ct.OUTPUT_FOLDER}/{os.path.basename(input_path)}.csv"
+    logger.info(
+        f"CSV file saved to {output_csv_path}"
+    )

@@ -209,3 +209,4 @@ data/
 tmp/
 analyze.ipynb
 analyze.py
+output/
