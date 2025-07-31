@@ -70,6 +70,8 @@ def analyze_documents_s3(
             bucket_name=bucket_name,
             document_key=document_key,
             output_path=output_path)
+        if csv_path == "<b> NO FOUND </b>":
+            continue
         csv_paths.append(csv_path)
 
     return csv_paths

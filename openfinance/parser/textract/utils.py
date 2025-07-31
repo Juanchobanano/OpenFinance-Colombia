@@ -48,8 +48,7 @@ def decrypt_pdf_file(
         input_pdf (str): The path to the input PDF file.
         output_pdf (str): The path to the output PDF file.
         password (str): The password to remove from the PDF file.
-    """
-    # Read the PDF file
+    """    # Read the PDF file
     reader = read_pdf(input_pdf)
 
     # Decrypt the PDF file
@@ -60,6 +59,7 @@ def decrypt_pdf_file(
         f"{ct.TEMP_FOLDER}/{os.path.basename(input_pdf)}_decrypted.pdf"
     )
     write_pdf(output_pdf, reader)
+
     return output_pdf
 
 

@@ -59,11 +59,11 @@ s
 
 
 ------------
-- Terminar lógica para procesar extractos Nu Bank
+- Terminar lógica para procesar extractos Nu Bank (DONE)
 - Procesar todos mis extractos de Nu Bank?
-- Necesito cargar esta información en algún lado. Puede ser algo sencillo como mi local.
-- Paso seguido, debo continuar con Itaú.
-- Hacer todo lo mismo que hice con Nu Bank.
+- Necesito cargar esta información en algún lado. Puede ser algo sencillo como mi local.(DONE)
+- Paso seguido, debo continuar con Itaú.(DONE)
+- Hacer todo lo mismo que hice con Nu Bank.(DONE)
 - Supongamos que en algún punto ya tengo toda esta información consolidada en una base de datos local.
 - Puedo sacar alguna interfaz o reporte con base en esta información.
 - Me interesa mucho clasificar mis gastos (puedo utilizar ChatGPT)
@@ -73,3 +73,16 @@ s
 - ¿Qué seguiría?
 - Incluir otro tipo de extractos: Bancarios, Money Market, etc.
 
+
+
+####
+
+- Agregar campo de ID de producto financiero
+- Itau processor failed con transacción en euros (arreglar esto)
+- Crear una clase que englobe el textract parser y el processor
+- Procesar todos los extractos de tarjetas de crédito de Nu Bank y del banco Itaú comenzando desde el mes de Enero
+- Agregar funcionalidad para clasificar gastos
+- Chatear con mis gastos
+- Análisis histórico de mis gastos, SERIES DE TIEMPO
+- Recomendaciones, alarmas, tendencias (outliers)
+- Montar interfaz gráfica 

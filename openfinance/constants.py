@@ -11,6 +11,7 @@ TEMP_FOLDER = "tmp"
 MAX_PDF_CHUNK_SIZE = 1
 OUTPUT_FOLDER = "output"
 NU_BANK_PASSWORD = config.get("NU_BANK_PASSWORD")
+ITAU_PASSWORD = config.get("ITAU_PASSWORD")
 
 # Define AWS credentials as a dictionary
 aws_credentials = {
